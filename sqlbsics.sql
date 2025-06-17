@@ -37,9 +37,10 @@ create database d3;
 
 use d3;
 
-create table delulu(
-id int primary key,
-name varchar(50));
+CREATE TABLE delulu (
+    id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
 
 
 insert into delulu values(1,"desginer");
@@ -47,4 +48,17 @@ insert into delulu values(2,"developer");
 
 select * from delulu;
 
+create table emp(
+id int primary key,
+salary int default 20000
+);
 
+insert into emp(id) values(
+1
+);
+
+
+insert into emp(id) values(2);
+insert into emp values(5,10000);
+
+select * from emp;
