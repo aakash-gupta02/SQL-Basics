@@ -48,6 +48,31 @@ select * from students where marks+20 >  100 and 110;
 
 select * from students order by marks desc;
 
+select * from students;
+
+select age from students where age > 18;
+
+use college2;
+
+select * from payment;
+
+
+select * from payment where mode = "upi";
+
+SELECT city, COUNT(*) AS total_payments
+FROM payment
+GROUP BY city
+HAVING COUNT(*) >= 1;
+
+select mode , count(mode) from payment where city = 'mumbai'  group by mode;
+
+
+
+
+
+
+
+
 
 
 
