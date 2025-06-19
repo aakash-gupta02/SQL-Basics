@@ -123,8 +123,34 @@ on a.id = b.manager_id;
 
 
 
+show databases;
 
 
+
+
+use college2;
+show tables;
+
+select * from students;
+
+select avg(marks) from students;
+
+select name, marks from students where marks > 82.5000;
+
+select * from students where marks > (select avg(marks) from students   ) order by marks desc limit 3 ;
+
+
+select * from students where student_id % 2 = 0;
+
+select max(marks) from students where course = "Civil" ;
+
+create view view1 as select age from students;
+
+create view view2 as select name,age,marks from students;
+
+select * from view2;
+
+select * from view1;
 
 
 
