@@ -10,3 +10,21 @@ select * from students;
 update students set age = age + 1 where age = 20;
 
 select * from students;
+
+delete from students where marks < 70;
+
+show tables;
+
+start transaction;
+
+delete from students;
+select * from students;
+
+rollback;
+
+select * from students;
+
+SELECT @@autocommit;
+
+SET autocommit = 0;
+
