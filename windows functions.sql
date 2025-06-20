@@ -73,6 +73,42 @@ SELECT
 FROM sales_data;
 
 
+SELECT 
+  id,
+  employee,
+  amount,
+  NTILE(6) OVER (ORDER BY amount DESC) AS sales_quartile
+FROM sales_data;
+
+
+SELECT 
+  id,
+  employee,
+  region,
+  amount,
+  AVG(amount) OVER (PARTITION BY region) AS avg_sale_in_region,
+  MIN(amount) OVER (PARTITION BY region) AS min_sale_in_region,
+  MAX(amount) OVER (PARTITION BY region) AS max_sale_in_region,
+  
+  CASE 
+  WHEN amount > AVG(amount) OVER (PARTITION BY region) THEN 'Above Average'
+  ELSE 'Below Average'
+END AS performance
+
+  
+FROM sales_data;
+
+
+
+
+
+select *,
+lag(amount) over( partition by region order by sale_date  ) as past_amount,
+lead(amount) over( partition by region order by sale_date ) as future_amount
+from sales_data;
+
+select 2+2;
+
 
 
 
